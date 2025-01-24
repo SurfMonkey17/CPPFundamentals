@@ -33,7 +33,7 @@ int main()
 
         axe_y += direction;
 
-        if (axe_y > 450 || axe_y < 0)
+        if (axe_y > 400 || axe_y < 0)
         {
             direction = -direction;
         }
