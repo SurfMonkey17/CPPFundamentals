@@ -2,14 +2,14 @@
 int main()
 {
     // window dimensions
-    int width{350};
-    int height{200};
+    int width{800};
+    int height{450};
     InitWindow(width, height, "Axe Game");
 
     // circle coordinates
 
-    int circle_x{175};
-    int circle_y{100};
+    int circle_x{200};
+    int circle_y{200};
 
     while (WindowShouldClose() == false) // keeps window open infinitely
     {
