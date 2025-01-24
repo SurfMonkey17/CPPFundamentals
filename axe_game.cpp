@@ -11,6 +11,12 @@ int main()
     int circle_x{200};
     int circle_y{200};
 
+    // axe coordinates
+    int axe_x{400};
+    int axe_y{0};
+
+    int direction{10};
+
     while (WindowShouldClose() == false) // keeps window open infinitely
     {
         BeginDrawing();
@@ -21,16 +27,25 @@ int main()
         SetTargetFPS(60);
 
         DrawCircle(circle_x, circle_y, 25, BLUE);
-        DrawRectangle(300, 0, 50, 50, RED);
+        DrawRectangle(axe_x, axe_y, 50, 50, RED);
+
+        // move axe
+
+        axe_y += direction;
+
+        if (axe_y > 450 || axe_y < 0)
+        {
+            direction = -direction;
+        }
 
         if (IsKeyDown(KEY_D) && circle_x < 350)
         {
-            circle_x = circle_x + 10;
+            circle_x += 10;
         }
 
         if (IsKeyDown(KEY_A) && circle_x > 0)
         {
-            circle_x = circle_x - 10;
+            circle_x -= 10;
         }
 
         // game logic ends
